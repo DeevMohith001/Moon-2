@@ -1,0 +1,69 @@
+# ============================================================
+# Experiments & Ablations Configuration
+# ============================================================
+
+experiments:
+  output_dir: "outputs/metrics"
+  figures_dir: "outputs/figures"
+  reports_dir: "outputs/reports"
+
+  # Experiment 1: Basic Few-Shot LLM
+  exp1_few_shot:
+    enabled: true
+    prompt: "configs/prompts/sentiment_prompt.yaml"
+    use_cot: false
+    num_paths: 1
+
+  # Experiment 2: Few-Shot + CoT Reasoning
+  exp2_few_shot_cot:
+    enabled: true
+    prompt: "configs/prompts/sentiment_prompt.yaml"
+    use_cot: true
+    num_paths: 1
+
+  # Experiment 3: Few-Shot + Multiple Reasoning Paths (Paper core setup)
+  exp3_multi_path:
+    enabled: true
+    prompt: "configs/prompts/sentiment_prompt.yaml"
+    use_cot: true
+    num_paths: 8
+    temperature: 0.5
+
+  # Experiment 4: Reasoning Paths Ablation
+  exp4_paths_ablation:
+    enabled: true
+    paths_list: [1, 3, 5, 8, 16]
+    temperature: 0.5
+
+  # Experiment 5: Demonstration Order Permutations
+  exp5_demo_order:
+    enabled: true
+    num_permutations: 5
+    random_seeds: [42, 101, 2024, 7, 999]
+
+  # Experiment 6: Agreement Consistency Filtering Ablation
+  exp6_consistency_filtering:
+    enabled: true
+    thresholds: [5, 6, 7, 8] # Out of 8 paths
+    report_retention: true
+
+  # Experiment 7: Classification vs Regression Distillation
+  exp7_distillation_comparison:
+    enabled: true
+    objectives:
+      - "classification" # CrossEntropy on majority label
+      - "regression"     # MSE on soft agreement score
+
+  # Experiment 8: Student Backbone Comparison
+  exp8_backbones:
+    enabled: false # Set true if compute budget permits
+    backbones:
+      - "distilbert-base-uncased"
+      - "microsoft/deberta-v3-small"
+
+  # Financial Analysis Extension
+  financial_analysis:
+    enabled: true
+    rolling_windows: [1, 3, 7] # 1-day, 3-day, 7-day rolling sentiment
+    return_horizons: [1, 3, 5] # 1-day, 3-day, 5-day forward returns
+    event_percentile: 0.90     # Top 10% post volume / extreme sentiment days

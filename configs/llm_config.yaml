@@ -1,0 +1,36 @@
+# ============================================================
+# LLM Configuration
+# ============================================================
+
+llm:
+  default_provider: "openai"  # openai, anthropic, local
+  
+  openai:
+    model: "gpt-4o-mini"
+    temperature: 0.5
+    max_tokens: 512
+    timeout: 60
+  
+  anthropic:
+    model: "claude-sonnet-4-20250514"
+    temperature: 0.5
+    max_tokens: 512
+    timeout: 60
+  
+  local:
+    model: "llama3"  # Ollama model name
+    base_url: "http://localhost:11434"
+    temperature: 0.5
+    max_tokens: 512
+
+  # Experiment settings
+  reasoning_paths: 8      # number of repeated generations per post
+  consistency_threshold: 5  # minimum consistent predictions to keep
+  
+  # Cost control
+  max_samples: 100           # max posts to process per experiment run
+  batch_size: 10
+  retry_count: 3
+  retry_delay: 2             # seconds
+  cache_enabled: true
+  cache_dir: "data/cache/llm"

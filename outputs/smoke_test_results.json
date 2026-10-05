@@ -1,0 +1,52 @@
+{
+  "steps": {
+    "create_dataset": {
+      "status": "PASS",
+      "n_posts": 10
+    },
+    "preprocessing": {
+      "status": "PASS",
+      "n_valid": 10
+    },
+    "teacher_labeling": {
+      "status": "PASS",
+      "n_paths": 80,
+      "label_distribution": {
+        "neutral": 31,
+        "positive": 28,
+        "negative": 21
+      }
+    },
+    "aggregation": {
+      "status": "PASS",
+      "n_posts": 10,
+      "mean_agreement": 0.9125,
+      "soft_score_range": [
+        -0.875,
+        0.875
+      ]
+    },
+    "agreement_filter": {
+      "status": "PASS",
+      "initial": 10,
+      "retained": 10,
+      "retention_pct": 100.0
+    },
+    "student_training": {
+      "status": "PASS",
+      "epochs": 1,
+      "final_train_loss": 0.751337,
+      "final_val_mse": 0.553787
+    },
+    "evaluation": {
+      "status": "PASS",
+      "accuracy": 0.5,
+      "macro_f1": 0.5
+    }
+  },
+  "passed": true,
+  "errors": [],
+  "elapsed_seconds": 33.9,
+  "n_steps_passed": 7,
+  "n_steps_total": 7
+}

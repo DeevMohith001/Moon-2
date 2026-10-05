@@ -1,0 +1,17 @@
+{
+  "annotation_seed": 9999,
+  "distillation_seed": 42,
+  "sample_size": 100,
+  "distillation_pool_size": 800,
+  "overlap_count": 0,
+  "leakage_check_passed": true,
+  "total_available_posts": 1000,
+  "non_distillation_posts": 200,
+  "dataset_source": "emilpartow/reddit_finance_posts_sp500",
+  "annotation_labels": [
+    "positive",
+    "neutral",
+    "negative"
+  ],
+  "post_ids_checksum": "37ce2addee9dc3dccd951739570bcdbe1b58f375971e596d1761d58b9b41f5d3"
+}

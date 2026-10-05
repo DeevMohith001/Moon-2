@@ -1,0 +1,5 @@
+threshold,num_examples,retained_count,retention_pct,average_agreement,mean_agreement,class_distribution
+5/8,30,30,100.0,0.9417,0.9417,"{'neutral': 16, 'positive': 8, 'negative': 6}"
+6/8,30,30,100.0,0.9417,0.9417,"{'neutral': 16, 'positive': 8, 'negative': 6}"
+7/8,30,30,100.0,0.9417,0.9417,"{'neutral': 16, 'positive': 8, 'negative': 6}"
+8/8,16,16,53.33,1.0,1.0,{'neutral': 16}

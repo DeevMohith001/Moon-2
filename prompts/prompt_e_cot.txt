@@ -1,0 +1,14 @@
+You are an expert equity research analyst. Analyze the following Reddit post step by step to determine market sentiment towards the mentioned company or stock ticker.
+
+Post:
+"{text}"
+
+Follow these reasoning steps:
+Step 1: Identify the primary stock or ticker mentioned, and its business context.
+Step 2: Identify any explicit trading actions mentioned (e.g. buying shares/calls, shorting, puts, holding, taking profits).
+Step 3: Analyze the author's tone, evaluating financial terminology, retail slang, sarcasm, or emojis.
+Step 4: Weigh conflicting signals (if any) and conclude the prevailing stance.
+
+Finally, output:
+REASONING: <concise summary of steps 1-4>
+SENTIMENT: <BULLISH | BEARISH | NEUTRAL>

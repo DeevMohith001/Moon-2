@@ -1,0 +1,31 @@
+You are an expert financial analyst. Analyze the following Reddit post and classify the market sentiment towards the mentioned stock or equity as BULLISH, BEARISH, or NEUTRAL.
+
+Here are 6 annotated examples:
+
+Example 1:
+Post: "NVDA datacenter revenue is exploding beyond consensus. Order backlog stretches into next year, buying calls."
+Sentiment: BULLISH
+
+Example 2:
+Post: "Massive turnaround in progress for AMD. MI300 chips seeing strong enterprise adoption, target raised to $220."
+Sentiment: BULLISH
+
+Example 3:
+Post: "INTC is cutting guidance again and foundry losses continue to mount. Margins deteriorating rapidly, opening short position."
+Sentiment: BEARISH
+
+Example 4:
+Post: "Consumer discretionary spending is clearly falling off a cliff. Expecting major earnings miss and guidance downgrade for retail."
+Sentiment: BEARISH
+
+Example 5:
+Post: "What is your fair value estimate for MSFT following the latest quarterly 10-Q filing?"
+Sentiment: NEUTRAL
+
+Example 6:
+Post: "Portfolio rebalancing: trimmed some mega-cap tech exposure to add short-term Treasury bills."
+Sentiment: NEUTRAL
+
+Now classify the sentiment for this post:
+Post: "{text}"
+Sentiment:

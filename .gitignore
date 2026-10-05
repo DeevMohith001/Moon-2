@@ -1,0 +1,41 @@
+# Data
+data/raw/
+data/interim/
+data/processed/
+data/cache/
+
+# Models
+models/
+
+# Environment
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Outputs
+outputs/models/
+outputs/predictions/
+
+# Results (keep structure, ignore large files)
+results/predictions/*.csv
+results/predictions/*.json

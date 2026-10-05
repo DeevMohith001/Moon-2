@@ -1,0 +1,88 @@
+version: "1.0.0"
+name: "paper_reproduction_cot_6shot"
+description: "Deng et al. (2023) faithful prompt with 6 demonstrations (2 positive, 2 neutral, 2 negative) and financial reasoning."
+
+system_prompt: |
+  You are an expert financial analyst and quantitative researcher specializing in financial social media text analysis.
+  Your task is to analyze the financial sentiment of Reddit posts discussing specific stocks or public companies.
+  Financial sentiment reflects the author's directional financial outlook and expected stock price trajectory (Bullish, Bearish, or Neutral).
+  Do NOT confuse emotional tone (excitement, casual profanity, frustration) with financial sentiment.
+  Analyze the fundamental, technical, valuation, and market arguments made by the author.
+
+instruction: |
+  Analyze the author's financial outlook regarding the target company/stock in the following Reddit post.
+  First, provide a concise financial reasoning summary (1-2 sentences) extracting the core economic rationale or catalyst.
+  Then, provide the final sentiment classification.
+  
+  Allowed sentiment classes:
+  - positive (Bullish: author expects stock price to rise, earnings beat, growth, upside catalyst)
+  - neutral (Neutral / Uncertain: factual questions, balanced bull/bear arguments, objective news, no clear directional stance)
+  - negative (Bearish: author expects stock price to fall, earnings miss, dilution, overvaluation, downside catalyst)
+  
+  You MUST respond strictly in the following JSON format:
+  ```json
+  {
+    "reasoning_summary": "<Concise 1-2 sentence financial reasoning>",
+    "sentiment": "positive|neutral|negative"
+  }
+  ```
+
+demonstrations:
+  - id: 1
+    sentiment: "positive"
+    ticker: "NVDA"
+    text: "Data center revenue surged 400% YoY and guidance was raised by $2B. Blackwell architecture demand is completely booked out for 12 months. Buying $130 calls for next month."
+    reasoning_summary: "Exceptional revenue acceleration in data center chips and multi-quarter forward backlog indicate strong revenue upside, driving the author to buy call options."
+    label: "positive"
+
+  - id: 2
+    sentiment: "positive"
+    ticker: "AAPL"
+    text: "Services gross margins hit 74% and iPhone 16 upgrade cycle is seeing massive momentum in Asia. Huge free cash flow will continue funding massive share buybacks. Long and holding."
+    reasoning_summary: "High-margin services expansion, resilient international replacement cycle, and aggressive capital return via share repurchases support a bullish holding stance."
+    label: "positive"
+
+  - id: 3
+    sentiment: "neutral"
+    ticker: "TSLA"
+    text: "Does anyone know what time the Q3 delivery numbers are dropping tomorrow morning? Also wondering if the energy storage megapack margin figures are included in the preliminary press release."
+    reasoning_summary: "The post contains informational inquiries regarding the release schedule and disclosure breakdown of production figures without expressing directional market outlook."
+    label: "neutral"
+
+  - id: 4
+    sentiment: "neutral"
+    ticker: "AMD"
+    text: "On one hand the MI300X is gaining enterprise traction and taking market share, but on the other hand PC client revenue is slowing down and valuation is pretty stretched at 45x forward earnings. Tough call here."
+    reasoning_summary: "The author explicitly weighs conflicting catalysts—data center accelerator momentum against consumer PC stagnation and elevated multiples—resulting in a balanced, indeterminate stance."
+    label: "neutral"
+
+  - id: 5
+    sentiment: "negative"
+    ticker: "INTC"
+    text: "Foundry losses widened to $7 billion this year, they just suspended their dividend, and gross margins are collapsing due to yield issues on the 18A process node. Cutting my losses, this is dead money."
+    reasoning_summary: "Severe manufacturing yield degradation, expanding foundry segment operating losses, and dividend elimination represent deep fundamental deterioration, prompting the author to exit."
+    label: "negative"
+
+  - id: 6
+    sentiment: "negative"
+    ticker: "GME"
+    text: "Management just announced another 20 million share ATM dilution right after the pump. Revenues are down 20% YoY and store closures are accelerating. Puts are going to print."
+    reasoning_summary: "Significant equity dilution following retail price spikes coupled with contracting retail top-line performance creates downside pressure, prompting bearish put purchases."
+    label: "negative"
+
+template: |
+  {system_prompt}
+
+  Task Instructions:
+  {instruction}
+
+  Here are reference demonstrations:
+
+  {demonstrations_formatted}
+
+  Now analyze the target post:
+  Company/Ticker: {ticker}
+  Post Content:
+  \"\"\"{post_text}\"\"\"
+
+  JSON Output:

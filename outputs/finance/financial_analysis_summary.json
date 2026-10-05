@@ -1,0 +1,32 @@
+{
+  "extension_note": "Extension beyond the original paper. Descriptive econometric analysis; correlation != causation.",
+  "sample_size": 20,
+  "analyzed_tickers": [
+    "BNX",
+    "YOU",
+    "ETFS",
+    "SPY",
+    "MSFT",
+    "NVDA",
+    "IRA",
+    "FB",
+    "TSLA",
+    "X",
+    "GME",
+    "FVG"
+  ],
+  "mean_sentiment_score": 0.058333333333333334,
+  "sentiment_std": 0.6050553313730807,
+  "timestamp_alignment": "16:00 EST cutoff to next market trading session",
+  "forward_horizons_days": [
+    1,
+    3,
+    5
+  ],
+  "findings": {
+    "h1_correlation": 0.042,
+    "h3_correlation": 0.018,
+    "h5_correlation": -0.005,
+    "interpretation": "Retail sentiment exhibits high daily noise with weak single-factor return predictability (R^2 < 0.02)."
+  }
+}

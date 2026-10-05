@@ -1,0 +1,65 @@
+# ============================================================
+# Model Configuration: Teacher, Student & Baselines
+# ============================================================
+
+teacher_llm:
+  default_provider: "openai" # "openai", "gemini", "anthropic", "local", "mock"
+  num_reasoning_paths: 8     # Paper core: K=8
+  temperature: 0.5           # Paper core: T=0.5
+  max_tokens: 512
+  cache_enabled: true
+  cache_dir: "data/cache/llm"
+  max_retries: 3
+  retry_delay: 2.0
+  tie_breaking_strategy: "neutral_default" # "neutral_default" or "highest_confidence"
+
+  providers:
+    openai:
+      model: "gpt-4o-mini"
+    gemini:
+      model: "gemini-1.5-flash"
+    anthropic:
+      model: "claude-3-5-sonnet-20241022"
+    local:
+      model: "llama3"
+      base_url: "http://localhost:11434"
+    mock:
+      model: "mock-llm-v1"
+
+student_model:
+  # Paper used Charformer (102M). We modernize with configurable compact text encoders:
+  default_backbone: "distilbert-base-uncased"
+  available_backbones:
+    - "distilbert-base-uncased"
+    - "microsoft/deberta-v3-small"
+    - "sentence-transformers/all-MiniLM-L6-v2"
+  charformer_limitation_note: |
+    Charformer (character-level T5, 102M) from Deng et al. (2023) was pre-trained on internal
+    Google social media datasets and is not natively supported or maintained in modern Hugging Face ecosystems.
+    We adopt DistilBERT / DeBERTa-v3 as high-efficiency, sub-word modern transformer equivalents
+    while faithfully preserving the regression distillation objective.
+
+  max_sequence_length: 256
+  num_labels: 3 # positive, neutral, negative
+
+baselines:
+  vader:
+    positive_threshold: 0.05
+    negative_threshold: -0.05
+  tfidf_lr:
+    max_features: 10000
+    ngram_range: [1, 2]
+    C: 1.0
+  tfidf_svm:
+    max_features: 10000
+    ngram_range: [1, 2]
+    C: 1.0
+  tfidf_nb:
+    max_features: 10000
+    ngram_range: [1, 2]
+    alpha: 1.0
+  finbert:
+    models:
+      prosus: "ProsusAI/finbert"
+      hkust: "yiyanghkust/finbert-tone"
+    batch_size: 16

@@ -1,0 +1,113 @@
+{
+  "split": "processed_full",
+  "total_rows": 1086,
+  "total_columns": 20,
+  "schema_validation": {
+    "all_required_present": true,
+    "missing_columns": [],
+    "null_counts": {
+      "post_id": 0,
+      "timestamp": 0,
+      "subreddit": 0,
+      "title": 0,
+      "body": 0,
+      "score": 0,
+      "num_comments": 0,
+      "source": 0,
+      "_ticker": 0,
+      "_sentiment": 0,
+      "text": 0,
+      "ticker": 0,
+      "company": 0,
+      "all_tickers": 0,
+      "ticker_confidence": 0,
+      "detection_method": 0,
+      "sentiment_label": 0,
+      "sentiment_score": 0,
+      "char_length": 0,
+      "word_count": 0
+    },
+    "null_percentages": {
+      "post_id": 0.0,
+      "timestamp": 0.0,
+      "subreddit": 0.0,
+      "title": 0.0,
+      "body": 0.0,
+      "score": 0.0,
+      "num_comments": 0.0,
+      "source": 0.0,
+      "_ticker": 0.0,
+      "_sentiment": 0.0,
+      "text": 0.0,
+      "ticker": 0.0,
+      "company": 0.0,
+      "all_tickers": 0.0,
+      "ticker_confidence": 0.0,
+      "detection_method": 0.0,
+      "sentiment_label": 0.0,
+      "sentiment_score": 0.0,
+      "char_length": 0.0,
+      "word_count": 0.0
+    }
+  },
+  "text_statistics": {
+    "char_count": {
+      "min": 105,
+      "max": 166,
+      "mean": 128.2,
+      "median": 127.0,
+      "std": 14.0
+    },
+    "word_count": {
+      "min": 17,
+      "max": 28,
+      "mean": 20.6,
+      "median": 20.0,
+      "std": 2.4
+    }
+  },
+  "sentiment_distribution": {
+    "counts": {
+      "BULLISH": 376,
+      "NEUTRAL": 355,
+      "BEARISH": 355
+    },
+    "percentages": {
+      "BULLISH": 34.62,
+      "NEUTRAL": 32.690000000000005,
+      "BEARISH": 32.690000000000005
+    }
+  },
+  "ticker_coverage": {
+    "total_posts_with_ticker": 1086,
+    "coverage_pct": 100.0,
+    "unique_tickers": 14,
+    "top_tickers": {
+      "MSFT": 84,
+      "AAPL": 82,
+      "NVDA": 81,
+      "GOOGL": 80,
+      "AMZN": 79,
+      "META": 79,
+      "GME": 77,
+      "TSLA": 76,
+      "COIN": 75,
+      "SPY": 75,
+      "PLTR": 75,
+      "INTC": 75,
+      "BA": 74,
+      "AMD": 74
+    }
+  },
+  "subreddit_distribution": {
+    "stocks": 279,
+    "StockMarket": 277,
+    "wallstreetbets": 277,
+    "investing": 253
+  },
+  "temporal_coverage": {
+    "min_date": "2023-01-01 13:09:00+00:00",
+    "max_date": "2024-11-30 17:07:00+00:00",
+    "total_days_span": 699
+  }
+}

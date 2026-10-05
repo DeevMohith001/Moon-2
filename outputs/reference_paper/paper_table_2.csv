@@ -1,0 +1,6 @@
+model,FiQA-News accuracy,FiQA-Post accuracy,Reddit accuracy,macro_f1,notes
+FinBERT (ProsusAI),0.742,0.685,0.480,0.461,Reported in Deng et al. Table 2
+FinBERT (HKUST),0.751,0.702,0.495,0.478,Reported in Deng et al. Table 2
+PaLM-540B (Few-shot CoT),0.852,0.814,0.723,0.718,Paper teacher model (proprietary)
+Charformer-102M (Student MSE),0.831,0.796,0.698,0.691,Paper student distilled model (proprietary Reddit train)
+Charformer-102M (Student CE),0.815,0.778,0.672,0.664,Classification distillation baseline

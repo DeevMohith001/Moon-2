@@ -1,0 +1,53 @@
+{
+  "accuracy": 0.75,
+  "balanced_accuracy": 0.8333,
+  "macro_f1": 0.7778,
+  "weighted_f1": 0.75,
+  "macro_precision": 0.8333,
+  "weighted_precision": 0.875,
+  "macro_recall": 0.8333,
+  "weighted_recall": 0.75,
+  "precision": 0.8333,
+  "recall": 0.8333,
+  "per_class": {
+    "BULLISH": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 2
+    },
+    "NEUTRAL": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 1
+    },
+    "BEARISH": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    }
+  },
+  "confusion_matrix": [
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "total_samples": 4,
+  "optimal_theta": 0.1,
+  "mean_predicted_score": -0.0068,
+  "std_predicted_score": 0.0924
+}

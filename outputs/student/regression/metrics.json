@@ -1,0 +1,97 @@
+{
+  "accuracy": 0.55,
+  "balanced_accuracy": 0.3333,
+  "macro_f1": 0.2366,
+  "weighted_f1": 0.3903,
+  "macro_precision": 0.1833,
+  "weighted_precision": 0.3025,
+  "macro_recall": 0.3333,
+  "weighted_recall": 0.55,
+  "precision": 0.1833,
+  "recall": 0.3333,
+  "per_class": {
+    "BULLISH": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 5
+    },
+    "NEUTRAL": {
+      "precision": 0.55,
+      "recall": 1.0,
+      "f1": 0.7097,
+      "support": 11
+    },
+    "BEARISH": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    }
+  },
+  "confusion_matrix": [
+    [
+      0,
+      5,
+      0
+    ],
+    [
+      0,
+      11,
+      0
+    ],
+    [
+      0,
+      4,
+      0
+    ]
+  ],
+  "total_samples": 20,
+  "optimal_theta": 0.15,
+  "mean_predicted_score": 0.0726,
+  "std_predicted_score": 0.024,
+  "predictions": [
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL",
+    "NEUTRAL"
+  ],
+  "raw_scores": [
+    0.08794272691011429,
+    0.07451961189508438,
+    0.051966987550258636,
+    0.05470028147101402,
+    0.08570409566164017,
+    0.07963304966688156,
+    0.09383305162191391,
+    0.07037099450826645,
+    0.057599108666181564,
+    0.09249908477067947,
+    0.06783922761678696,
+    0.06673873215913773,
+    0.08939948678016663,
+    0.07705562561750412,
+    0.07086912542581558,
+    0.13600948452949524,
+    0.0161219984292984,
+    0.05978179723024368,
+    0.03544605150818825,
+    0.0844130739569664
+  ]
+}

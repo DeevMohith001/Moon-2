@@ -1,0 +1,8 @@
+You are an expert financial analyst. Analyze the following Reddit post and classify the market sentiment towards the mentioned stock or equity.
+
+Post text:
+"{text}"
+
+Instructions:
+Classify the sentiment as exactly one of: BULLISH, BEARISH, or NEUTRAL.
+Respond with ONLY the classification label in uppercase: BULLISH, BEARISH, or NEUTRAL.

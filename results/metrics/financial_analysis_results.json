@@ -1,0 +1,122 @@
+{
+  "correlations_unweighted_F1": {
+    "1d": {
+      "pearson_r": 0.0074,
+      "pearson_p_value": 0.6823,
+      "spearman_rho": -0.0034,
+      "spearman_p_value": 0.8524,
+      "n_samples": 3083
+    },
+    "3d": {
+      "pearson_r": -0.008,
+      "pearson_p_value": 0.6552,
+      "spearman_rho": -0.0138,
+      "spearman_p_value": 0.4422,
+      "n_samples": 3083
+    },
+    "5d": {
+      "pearson_r": 0.0023,
+      "pearson_p_value": 0.8966,
+      "spearman_rho": 0.0046,
+      "spearman_p_value": 0.7972,
+      "n_samples": 3083
+    }
+  },
+  "correlations_weighted_F7": {
+    "1d": {
+      "pearson_r": 0.0068,
+      "pearson_p_value": 0.7044,
+      "spearman_rho": -0.0039,
+      "spearman_p_value": 0.8284,
+      "n_samples": 3083
+    },
+    "3d": {
+      "pearson_r": -0.0085,
+      "pearson_p_value": 0.6357,
+      "spearman_rho": -0.0136,
+      "spearman_p_value": 0.4519,
+      "n_samples": 3083
+    },
+    "5d": {
+      "pearson_r": 0.0013,
+      "pearson_p_value": 0.9435,
+      "spearman_rho": 0.0044,
+      "spearman_p_value": 0.8081,
+      "n_samples": 3083
+    }
+  },
+  "ols_regressions_F2": {
+    "1d": {
+      "beta_1": 0.00068,
+      "intercept": 0.00143,
+      "r_squared": 0.0001,
+      "p_value": 0.6823,
+      "std_error": 0.00166
+    },
+    "3d": {
+      "beta_1": -0.00103,
+      "intercept": 0.00393,
+      "r_squared": 0.0001,
+      "p_value": 0.6552,
+      "std_error": 0.00231
+    },
+    "5d": {
+      "beta_1": 0.00037,
+      "intercept": 0.00571,
+      "r_squared": 0.0,
+      "p_value": 0.8966,
+      "std_error": 0.00286
+    }
+  },
+  "predictive_models_F3_F4_F5": {
+    "F3_market_only": {
+      "features": [
+        "lag_return_1d"
+      ],
+      "accuracy": 0.4854,
+      "auc_roc": 0.5058,
+      "f1_score": 0.6536,
+      "train_size": 2460,
+      "test_size": 616
+    },
+    "F4_sentiment_only": {
+      "features": [
+        "mean_sentiment",
+        "post_count"
+      ],
+      "accuracy": 0.4854,
+      "auc_roc": 0.4816,
+      "f1_score": 0.6536,
+      "train_size": 2460,
+      "test_size": 616
+    },
+    "F5_combined": {
+      "features": [
+        "lag_return_1d",
+        "mean_sentiment",
+        "post_count"
+      ],
+      "accuracy": 0.4838,
+      "auc_roc": 0.4894,
+      "f1_score": 0.6521,
+      "train_size": 2460,
+      "test_size": 616
+    }
+  },
+  "event_analysis_F6": {
+    "bullish_events": {
+      "count": 464,
+      "mean_fwd_1d": 0.0006,
+      "mean_fwd_3d": 0.0024
+    },
+    "bearish_events": {
+      "count": 511,
+      "mean_fwd_1d": 0.0018,
+      "mean_fwd_3d": 0.0045
+    },
+    "spread_1d": -0.0012,
+    "spread_3d": -0.0021
+  },
+  "total_joint_observations": 3083,
+  "total_tickers": 10
+}

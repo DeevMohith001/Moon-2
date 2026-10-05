@@ -1,0 +1,74 @@
+# ============================================================
+# Data Configuration
+# ============================================================
+
+dataset:
+  name: "reddit_financial_sentiment"
+  raw_dir: "data/raw"
+  interim_dir: "data/interim"
+  processed_dir: "data/processed"
+  external_dir: "data/external"
+  cache_dir: "data/cache"
+
+  # Reddit data fields
+  required_fields:
+    - "post_id"
+    - "title"
+    - "selftext"
+    - "timestamp"
+    - "subreddit"
+  
+  optional_fields:
+    - "score"
+    - "num_comments"
+    - "ticker"
+    - "permalink"
+
+  # Ingestion & cleaning filters
+  cleaning:
+    min_length: 10
+    max_length: 2048
+    remove_deleted: true
+    remove_duplicates: true
+    preserve_financial_emojis: true
+    normalize_whitespace: true
+    timezone: "UTC"
+
+  # Subreddits monitored
+  subreddits:
+    - "wallstreetbets"
+    - "stocks"
+    - "investing"
+    - "StockMarket"
+
+  # Target tickers
+  primary_tickers:
+    - "AAPL"
+    - "TSLA"
+    - "NVDA"
+    - "MSFT"
+    - "AMZN"
+    - "GOOGL"
+    - "META"
+    - "AMD"
+    - "GME"
+    - "SPY"
+
+  # Split ratios (chronological or stratified)
+  splits:
+    strategy: "stratified" # "stratified" or "chronological"
+    train_ratio: 0.70
+    val_ratio: 0.15
+    test_ratio: 0.15
+    random_seed: 42
+
+  # Cross-dataset evaluation: FiQA
+  fiqa:
+    enabled: true
+    data_dir: "data/external/fiqa"
+    subtasks:
+      - "fiqa_news"
+      - "fiqa_post"
+    binary_threshold: 0.0
+    discard_neutral_zeros: true
+    remove_multiple_stocks: true

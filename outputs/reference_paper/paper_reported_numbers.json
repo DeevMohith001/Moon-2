@@ -1,0 +1,38 @@
+{
+  "note": "These are the numbers FROM THE ORIGINAL PAPER (Deng et al. 2023).",
+  "source": "arXiv:2212.11311 Table 1 and Table 2",
+  "warning": "These are NOT our reproduction results. Our results are in results/ directory.",
+  "teacher_llm_6shot_cot_k8": {
+    "model": "PaLM-540B",
+    "FiQA-News": {
+      "accuracy": 0.759,
+      "macro_f1": 0.752
+    },
+    "FiQA-Post": {
+      "accuracy": 0.714,
+      "macro_f1": 0.695
+    }
+  },
+  "finbert_prosus": {
+    "model": "ProsusAI/finbert",
+    "FiQA-News": {
+      "accuracy": 0.69,
+      "macro_f1": 0.652
+    },
+    "FiQA-Post": {
+      "accuracy": 0.641,
+      "macro_f1": 0.608
+    }
+  },
+  "student_regression": {
+    "model": "Charformer-102M (MSE distillation)",
+    "FiQA-News": {
+      "accuracy": 0.776,
+      "macro_f1": 0.77
+    },
+    "FiQA-Post": {
+      "accuracy": 0.735,
+      "macro_f1": 0.718
+    }
+  }
+}

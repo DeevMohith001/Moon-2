@@ -1,0 +1,13 @@
+{
+  "input_file": "data\\annotation_template.csv",
+  "total_posts": 100,
+  "fully_annotated": 0,
+  "partially_annotated": 0,
+  "unannotated": 100,
+  "annotation_complete": false,
+  "valid_labels_only": true,
+  "inter_annotator_agreement": {},
+  "class_distribution": {},
+  "consensus_labels": {},
+  "errors": []
+}

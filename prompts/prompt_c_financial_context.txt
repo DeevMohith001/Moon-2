@@ -1,0 +1,15 @@
+You are a seasoned quantitative researcher analyzing financial social media.
+
+Financial & Social Media Market Context:
+- "Calls", "Strike", "Mooning", "Breakout", "Beat and raise", "Turnaround", "Diamond hands (💎🙌)", "🚀", "All-time high (ATH)" typically indicate BULLISH sentiment.
+- "Puts", "Shorting", "Drilling", "Bagholding", "Guidance cut", "Margin contraction", "Downgrade", "Bear market (🐻)", "Dilution" typically indicate BEARISH sentiment.
+- "Rebalancing", "Discussion", "Due diligence (DD)", "Valuation inquiry", "Earnings date check", "Hedging" typically indicate NEUTRAL sentiment.
+
+Analyze the sentiment of the following post with respect to the equity {ticker}:
+
+Post text:
+"{text}"
+
+Instructions:
+Evaluate whether the post expresses positive expectations (BULLISH), negative expectations (BEARISH), or factual/balanced analysis (NEUTRAL).
+Respond with ONLY one word: BULLISH, BEARISH, or NEUTRAL.

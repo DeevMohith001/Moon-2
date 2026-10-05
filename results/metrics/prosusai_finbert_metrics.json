@@ -1,0 +1,48 @@
+{
+  "accuracy": 0.7117,
+  "balanced_accuracy": 0.7128,
+  "macro_f1": 0.7128,
+  "weighted_f1": 0.7125,
+  "macro_precision": 0.7658,
+  "weighted_precision": 0.7658,
+  "macro_recall": 0.7128,
+  "weighted_recall": 0.7117,
+  "per_class": {
+    "BULLISH": {
+      "precision": 0.6842,
+      "recall": 0.6964,
+      "f1": 0.6903,
+      "support": 56
+    },
+    "NEUTRAL": {
+      "precision": 0.6133,
+      "recall": 0.8679,
+      "f1": 0.7188,
+      "support": 53
+    },
+    "BEARISH": {
+      "precision": 1.0,
+      "recall": 0.5741,
+      "f1": 0.7294,
+      "support": 54
+    }
+  },
+  "confusion_matrix": [
+    [
+      39,
+      17,
+      0
+    ],
+    [
+      7,
+      46,
+      0
+    ],
+    [
+      11,
+      12,
+      31
+    ]
+  ],
+  "total_samples": 163
+}
